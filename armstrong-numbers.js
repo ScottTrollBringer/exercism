@@ -1,13 +1,13 @@
 export const validate = (nombreParam) => {
-  let stringParam = '';
-  let isArmstrong = false;
+  const stringParam = nombreParam.toString();
 
-  stringParam = nombreParam.toString();
-
-  const calculArmstrong = [...stringParam].reduce((accu, current) => { return accu += Number(current) ** stringParam.length; }, 0);
+  const calculArmstrong = [...stringParam].reduce((accu, current) => {
+    accu += Number(current) ** stringParam.length; // eslint-disable-line no-param-reassign
+    return accu;
+  }, 0);
 
   if (calculArmstrong === nombreParam) {
-    isArmstrong = true;
+    return true;
   }
-  return isArmstrong;
+  return false;
 };

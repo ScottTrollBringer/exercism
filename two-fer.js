@@ -1,8 +1,6 @@
 export const twoFer = (prenom) => {
-  let sortie = 'you';
-
   if (prenom !== '') {
-    sortie = prenom;
+    return `One for ${prenom}, one for me.`;
   }
-  return `One for ${sortie}, one for me.`;
+  return 'One for you, one for me.';
 };
