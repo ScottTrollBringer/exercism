@@ -1,11 +1,6 @@
 export const encode = (phraseTest) => {
   let phraseEncodee = '';
-  const tableau = [];
-
-  // Je manipule un array plutot qu'une string car la string d'origine est immutable
-  for (let i = 0; i < phraseTest.length; i += 1) {
-    tableau.push(phraseTest[i]);
-  }
+  const tableau = [...phraseTest].map(current => current);
 
   // Je parcours le tableau en supprimant la valeur de la premiere case a chaque fois que je la stocke dans la string de sortie
   // La variable J indique les répétitions de caractères, enCours est la lettre en cours d'évaluation
@@ -30,11 +25,7 @@ export const encode = (phraseTest) => {
 
 export const decode = (phraseTest) => {
   let phraseDecodee = '';
-  const tableau = [];
-
-  for (let i = 0; i < phraseTest.length; i += 1) {
-    tableau.push(phraseTest[i]);
-  }
+  const tableau = [...phraseTest].map(current => current);
 
   while (tableau[0] !== undefined) {
     let k = 0;
